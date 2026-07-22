@@ -1,0 +1,28 @@
+staff_name = str(input("Enter the staff name: "))
+staff_id = str(input("Enter the staff ID: "))
+
+id_split = staff_id.split("-")
+print(id_split)
+
+if len(id_split) != 3:
+    print ("Invalid staff ID")
+
+prefix, year_input, userId_input = id_split
+
+year = int(year_input)
+userId = int(userId_input)
+
+print(year)
+print(userId)
+
+if prefix == "BGR" and year >= 2020 and userId >= 0:
+
+    if (userId & 1):
+        staff_type = "senior staff"
+    else:
+        staff_type = "junior staff"
+
+    print("Vaild ID", staff_type)
+
+else:
+    print("Invalid staff ID detail")
